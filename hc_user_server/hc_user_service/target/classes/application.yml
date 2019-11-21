@@ -1,0 +1,39 @@
+server:
+  port: 8768
+spring:
+  application:
+    name: user-server
+  datasource:
+    url: jdbc:mysql://10.11.60.22:3306/wk
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: 10.11.60.22
+  rabbitmq:
+    host: 10.11.60.22
+    username: wlkg
+    password: 123456
+    virtual-host: /wlkg
+    template:
+      retry:
+        enabled: true
+        initial-interval: 10000ms
+        max-interval: 210000ms
+        multiplier: 2
+    publisher-confirms: true
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:123@localhost:8761/eureka/
+#actuator设置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #暴露所有端点,默认是info和health
+    endpoint:
+      health:
+        show-details: always
