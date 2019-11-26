@@ -11,6 +11,7 @@ import com.hchina.common.utils.CodecUtils;
 import com.hchina.common.utils.NumberUtils;
 import com.wk.china.mapper.UserMapper;
 import com.wk.user.pojo.User;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.amqp.AmqpException;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -121,6 +122,41 @@ public class UserService {
     }
 
     /**
+     * 注册时进行手机号码是否可以使用
+     * @param phone
+     * @return
+     */
+    public Boolean checkPhone(String phone) {
+        Example example = new Example(User.class);
+        example.createCriteria().andEqualTo("phone",phone);
+        int count = userMapper.selectCountByExample(example);
+        return count == 0;
+    }
+
+    /**
+     * 验证短信验证码是否正确
+     * @param phone
+     * @param code
+     * @return
+     */
+    public Boolean checkVerifyCode(String phone, String code) {
+        //生成redis中的key
+        String codeKey = KEY_PREFIX+phone;
+        //从redis中取出验证码进行验证
+        String redisCode = null;
+        try {
+            redisCode = redisTemplate.opsForValue().get(codeKey);
+        } catch (Exception e) {
+            throw new HChinaException(ExceptionEnums.INVALID_VERFIY_CODE);
+        }
+
+        if(!StringUtils.equals(redisCode,code)){
+            throw new HChinaException(ExceptionEnums.INVALID_VERFIY_CODE);
+        }
+        return true;
+    }
+
+    /**
      * 实现用户查询
      * @param username
      * @param password
@@ -153,5 +189,14 @@ public class UserService {
         Page<User> pageInfo = (Page<User>) userMapper.selectByExample(example);
 
         return new PageResult<>(pageInfo.getTotal(),pageInfo);
+    }
+
+    public void deleteUser(Integer id) {
+        User user = new User();
+        user.setId(id);
+        int i = userMapper.updateByPrimaryKeySelective(user);
+        if(i != 1){
+            throw new HChinaException(ExceptionEnums.FAIL_DELETE_USER);
+        }
     }
 }

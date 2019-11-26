@@ -2,28 +2,18 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hc_business" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/hc_business" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/hc_commons" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hc_business/hc-business-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hc_business/hc-business-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hc_commons" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hc_config_server" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/hc_config_server" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/hc_eureka_center" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hc_eureka_center" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hc_perms_admin" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/hc_perms_admin" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/hc_portal_server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hc_portal_server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hc_sms_server" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/hc_sms_server" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/hc_user_server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hc_user_server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hc_user_server/hc_user_interface" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/hc_user_server/hc_user_interface" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hc_user_server/hc_user_service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/hc_user_server/hc_user_service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/hc_zuul_server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/hc_zuul_server" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>

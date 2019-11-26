@@ -14,7 +14,8 @@ public enum ExceptionEnums {
     GOODS_SPU_IS_EMPTY(2000,"该货源不存在！！"),
     INVALID_VERFIY_CODE(2006,"无效的验证码"),
     PRICE_CANNOT_BE_NULL(400,"价格不能为空！！"),
-    CATEGORY_IS_EMPTY(3000,"该分类不存在！！");
+    CATEGORY_IS_EMPTY(3000,"该分类不存在！！"),
+    FAIL_DELETE_USER(3001,"删除失败！！");
 
 
 

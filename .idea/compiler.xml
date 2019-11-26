@@ -7,10 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="hc_commons" />
-        <module name="hc_business" />
-        <module name="hc_config_server" />
-        <module name="hc_eureka_center" />
         <module name="hc_sms_server" />
+        <module name="hc_config_server" />
+        <module name="hc-business-service" />
+        <module name="hc-business-interface" />
+        <module name="hc_eureka_center" />
         <module name="hc_user_service" />
         <module name="hc_portal_server" />
         <module name="hc_user_interface" />
@@ -21,6 +22,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="hc-business-interface" options="-parameters" />
+      <module name="hc-business-service" options="-parameters" />
       <module name="hc_business" options="-parameters" />
       <module name="hc_commons" options="-parameters" />
       <module name="hc_config_server" options="-parameters" />

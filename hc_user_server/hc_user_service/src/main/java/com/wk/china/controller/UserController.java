@@ -53,6 +53,16 @@ public class UserController {
         return ResponseEntity.ok(null);
     }
 
+    /**
+     * 用户手机号唯一验证
+     * @param phone
+     * @return
+     */
+    @GetMapping("/checkphone/{phone}")
+    public ResponseEntity<Boolean> checkPhone(@PathVariable("phone") String phone){
+        Boolean res = userService.checkPhone(phone);
+        return ResponseEntity.ok(res);
+    }
 
     /**
      * 登录
@@ -83,6 +93,15 @@ public class UserController {
     ){
         PageResult<User> result = this.userService.queryUserByPage(page,rows);
         return ResponseEntity.ok(result);
+    }
+
+    /**
+     * 用户信息删除
+     */
+    @DeleteMapping("/deleteuser/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable("id") Integer id){
+        userService.deleteUser(id);
+        return ResponseEntity.ok(null);
     }
 
 }
