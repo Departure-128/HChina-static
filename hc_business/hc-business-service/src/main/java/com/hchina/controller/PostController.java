@@ -63,7 +63,7 @@ public class PostController {
         postService.addPost(post);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
-
+//
     @PostMapping("/addPost1")
     public ResponseEntity<Void> a1(Post post) {
         postService.addPost(post);
